@@ -10,11 +10,19 @@ for package in $packages; do
 
     # Check the exit status of the installation
     if [ $? -eq 0 ]; then
-        echo "Successfully installed $package"
+        echo "\033[0;31mSuccessfully installed $package!\033[0m"
     else
-        echo "Failed to install $package"
+        echo "\033[0;31mFailed to install $package!\033[0m"
     fi
 done
+
+echo "\033[0;31mInstalling vim-plug...\033[0m" 
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+echo "\033[0;31m'vim-plug' is successfully installed!" 
+
+echo "\033[0;31mInstalling vim plugins...\033[0m"
+nvim +PlugInstall +qall +silent
+echo "\033[0;31mAll vim plugins successfully installed!\033[0m"
 
 echo "\033[0;31mAll packages installed!\033[0m"
 
