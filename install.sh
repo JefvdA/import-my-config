@@ -26,6 +26,9 @@ echo "\033[0;31mAll vim plugins successfully installed!\033[0m"
 
 echo "\033[0;31mAll packages installed!\033[0m"
 
+git config --global core.editor "nvim"
+echo "\033[0;31mVim has been set as the default text editor for GIT!\033[0m"
+
 BASH_ALIASES_DIR=$HOME/.bash-aliases
 
 if [ ! -d $BASH_ALIASES_DIR ]
