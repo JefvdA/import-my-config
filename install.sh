@@ -29,6 +29,15 @@ echo "\033[0;31mAll packages installed!\033[0m"
 git config --global core.editor "nvim"
 echo "\033[0;31mVim has been set as the default text editor for GIT!\033[0m"
 
+KITTY_CONFIG_DIR=$HOME/.config/kitty
+
+if [ -z "$(ls -A $KITTY_CONFIG_DIR)" ]; then
+	git clone git@github.com:JefvdA/kitty-config.git $KITTY_CONFIG_DIR
+	echo "\033[0;31mThe kitty config is cloned!\033[0m"
+else
+   echo "\033[0;31mThere was already configuration for kitty found - keeping existing config!\033[0m"
+fi
+
 BASH_ALIASES_DIR=$HOME/.bash-aliases
 
 if [ ! -d $BASH_ALIASES_DIR ]
