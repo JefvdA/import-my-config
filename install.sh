@@ -38,6 +38,11 @@ else
    echo "\033[0;31mThere was already configuration for kitty found - keeping existing config!\033[0m"
 fi
 
+I3_CONFIG_DIR=$HOME/.config/i3
+
+sudo git clone https://github.com/JefvdA/i3wm-config.git $I3_CONFIG_DIR
+echo "\033[0;31mThe i3 config is cloned!\033[0m"
+
 BASH_ALIASES_DIR=$HOME/.bash-aliases
 
 if [ ! -d $BASH_ALIASES_DIR ]
