@@ -38,6 +38,15 @@ else
    echo "\033[0;31mThere was already configuration for kitty found - keeping existing config!\033[0m"
 fi
 
+NVIM_CONFIG_DIR=$HOME/.config/nvim
+
+if [ -z "$(ls -A $NVIM_CONFIG_DIR)" ]; then
+	git clone git@github.com:JefvdA/nvim-config.git $NVIM_CONFIG_DIR
+	echo "\033[0;31The nvim config is cloned!\033[0m"
+else
+	echo "\033[0;31There was already configuration for nvim found - keeping existing config!\033[0m"
+fi
+
 I3_CONFIG_DIR=$HOME/.config/i3
 
 sudo git clone https://github.com/JefvdA/i3wm-config.git $I3_CONFIG_DIR
