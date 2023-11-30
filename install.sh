@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-packages="neovim kitty i3"
+packages="neovim kitty i3 flameshot"
 
 echo "\033[0;31mInstalling packages...\033[0m"
 
